@@ -1,0 +1,18 @@
+footer {
+    position        : fixed;
+    bottom          : 1%;
+    left            : 1%;
+    text-align      : center;
+    line-height     : 28px;
+    padding         : 15px 20px;
+    background-color: lightcyan;
+    width           : 331px;
+    max-width       : 86%;
+    margin-top      : auto;
+}
+
+
+footer a {
+    color          : #000;
+    text-decoration: none;
+}
