@@ -1,9 +1,15 @@
+import React, {useState} from 'react';
+import { Timer } from './Timer';
+import { Quiz } from './Quiz';
 import './App.css';
 import audiencePoll from '../src/assets/audience_poll.png'
 import fiftyFifty from '../src/assets/fifty_fifty.png'
 import flipQuestion from '../src/assets/flip_the_question.png'
 import askExpert from '../src/assets/ask_the_expert.png'
 const App = () => {
+
+  const [questionNumber, setQuestionNumber] = useState(1); 
+
   const moneyList = [
     {id:1, amount: "1,000"}, 
     {id:2, amount: "2,000"}, 
@@ -27,18 +33,10 @@ const App = () => {
       <div className='app_container'>
         <div className="main">
           <div className="top">
-            <div className="itmer">60</div>
+            <Timer     />
           </div>
           <div className="bottom">
-            <div className="quiz">
-              <div className="question">What is the Capital of India?</div>
-              <div className="answers">
-                <div className="answer">Kolkata</div>
-                <div className="answer">Delhi</div>
-                <div className="answer">Mumbai</div>
-                <div className="answer">Chenni</div>
-              </div>
-            </div>
+            <Quiz />
           </div>
         </div>
         <div className="price_list">
@@ -83,3 +81,40 @@ const App = () => {
 }
 
 export default App;
+
+    function salam({}) {
+      return (<div className="quiz">
+              <div className="question">What is the Capital of Canada?</div>
+              <div className="answers">
+                <div className="answer">Houston</div>
+                <div className="answer">New York</div>
+                <div className="answer">Ottawa</div>
+                <div className="answer">Glasgow</div>
+              </div>
+            </div>);
+    }
+
+    function input({}) {
+      return (<div className="quiz">
+              <div className="question">What is the Capital of Canada?</div>
+              <div className="answers">
+                <div className="answer">Houston</div>
+                <div className="answer">New York</div>
+                <div className="answer">Ottawa</div>
+                <div className="answer">Glasgow</div>
+              </div>
+            </div>);
+    }
+
+    function ask({}) {
+      return (<div className="quiz">
+              <div className="question">What is the Capital of Canada?</div>
+              <div className="answers">
+                <div className="answer">Houston</div>
+                <div className="answer">New York</div>
+                <div className="answer">Ottawa</div>
+                <div className="answer">Glasgow</div>
+              </div>
+            </div>);
+    }
+      
