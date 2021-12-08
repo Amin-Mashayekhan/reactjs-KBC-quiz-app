@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
-import { Timer } from './Timer';
-import { Quiz } from './Quiz';
+import {useState } from 'react';
+import Timer from './components/Timer';
+import Quiz from './components/Quiz';
+import data from "./components/data"
 import './App.css';
 import audiencePoll from '../src/assets/audience_poll.png'
 import fiftyFifty from '../src/assets/fifty_fifty.png'
@@ -36,7 +37,7 @@ const App = () => {
             <Timer     />
           </div>
           <div className="bottom">
-            <Quiz />
+            <Quiz data={data} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} />
           </div>
         </div>
         <div className="price_list">

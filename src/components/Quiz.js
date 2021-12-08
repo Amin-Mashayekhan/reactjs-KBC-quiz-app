@@ -1,11 +1,27 @@
-const Quiz = () => {
+import {useEffect, useState} from 'react';
+
+const Quiz = ({data, questionNumber, setQuestionNumber}) => {
+    const[question, setQuestion] = useState(null);
+
+    useEffect(() => {
+        setQuestion(data[questionNumber - 1])
+    },[data, questionNumber]);
+
+
     return <div className="quiz">
-        <div className="question">What is the Capital of Canada?</div>
+        <div className="question">{question?.question}</div>
+        {/* // '?' means optional means question may be exist or not */}
         <div className="answers">
-            <div className="answer">Houston</div>
-            <div className="answer">New York</div>
-            <div className="answer">Ottawa</div>
-            <div className="answer">Glasgow</div>
+            {
+                question?.answers.map((answer, index ) => {
+                    return (
+                        <div key={index} className="answer">
+                            <span className="option"> &#x2756;{answer.option}</span> :
+                            {answer.text}
+                        </div>
+                    )
+                }) 
+            } 
         </div>
     </div>;
 }
