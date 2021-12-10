@@ -10,7 +10,7 @@ import askExpert from '../src/assets/ask_the_expert.png'
 import Play from './components/Play';
 const App = () => {
   const [username, setUsername] = useState(null);
-  const [questionNumber, setQuestionNumber] = useState(16);
+  const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState("0");
 
@@ -55,12 +55,12 @@ const App = () => {
                               Congratulations!
                             </div>
                             <div>
-                              You earned: <span className="earned_money">&#8377; {earned}</span>
+                              You earned: <span className="earned_money">${earned}</span>
                             </div>
                           </div>
                         ) : (
                           <div className="earned">
-                            You earned: <span className="earned_money">&#8377; {earned}</span>
+                            You earned: <span className="earned_money">${earned}</span>
                           </div>
                         )
                       : (
@@ -115,7 +115,7 @@ const App = () => {
                 </div>
             </>
           ) : (
-            <Play />
+            <Play setUsername={setUsername} />
           )
         }
 

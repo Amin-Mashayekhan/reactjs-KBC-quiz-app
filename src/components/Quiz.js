@@ -1,10 +1,21 @@
 import { useEffect, useState } from 'react';
+import useSound from "use-sound";
+import wrong from '../assets/play.mp3';
+import correct from '../assets/correct.mp3';
+import play from '../assets/wrong.mp3';
 
 const Quiz = ({ data, setStop, questionNumber, setQuestionNumber }) => {
     const [question, setQuestion] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [ansClassName, setAnsClassName] = useState("answer");
 
+    const [letsPlay] = useSound(play);
+    const [correctAns] = useSound(correct);
+    const [wrongAns] = useSound(wrong);
+
+    useEffect(() => {
+        letsPlay();
+    }, [letsPlay]);
 
     const delay = (duration, callback) => {
         setTimeout(() =>{
@@ -22,11 +33,13 @@ const Quiz = ({ data, setStop, questionNumber, setQuestionNumber }) => {
         })
         delay(4000, ()=>{
             if (ans.correct) {
+                correctAns();
                 delay(2000, () =>{
                     setQuestionNumber((previous) => previous + 1);
                     setSelectedAnswer(null)
                 })
             } else {
+                wrongAns();
                 delay(2000, () => {
                     setStop(true);
                 })
@@ -53,7 +66,7 @@ const Quiz = ({ data, setStop, questionNumber, setQuestionNumber }) => {
                             key={index} 
                             className={selectedAnswer === answer ? ansClassName : "answer"} 
                             onClick={() => handleAnswer(answer)}>
-                            <span className="option"> &#x2756;{answer.option}</span> :
+                            <span className="option"> &#x2756;{answer.option} </span> : 
                             {answer.text}
                         </div>
                     )

@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 const Timer = ({setStop, questionNumber}) => {
-  const [timer, setTimer] = useState(7);
+  const [timer, setTimer] = useState(30);
   useEffect(() => {
     if (timer === 0 ) return setStop(true);
     const interval = setInterval(()=> {
@@ -10,7 +10,7 @@ const Timer = ({setStop, questionNumber}) => {
   }, [setStop,timer])
 
 useEffect(() => {
-  setTimer(7);
+  setTimer(30);
 },[questionNumber])
 
   return <div className="timer ">{timer}</div>;
