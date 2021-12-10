@@ -36,6 +36,7 @@ body {
     background-color: #020230;
     display         : flex;
     align-items     : center;
+    align-content: flex-start;
     justify-content : center;
     flex-wrap       : wrap;
 }
@@ -45,13 +46,14 @@ body {
     padding        : 20px;
     list-style-type: none;
     width          : 100%;
+    margin-top: 15px;
 }
 
 
 .moneyListItem {
     display      : flex;
     align-items  : center;
-    padding      : 5px;
+    padding      : 7px 5px;
     border-radius: 5px;
 }
 
@@ -415,7 +417,7 @@ span.option {
 
 
     .moneyListItem {
-        padding: 5px;
+        padding: 10px 5px;
     }
 
 
@@ -427,17 +429,17 @@ span.option {
 
 
 footer {
-    position        : fixed;
-    bottom          : 1%;
-    left            : 1%;
-    text-align      : center;
-    line-height     : 28px;
-    padding         : 10px 15px;
-    background-color: lightcyan;
-    width           : 331px;
-    max-width       : 86%;
-    margin-top      : auto;
-    font-size       : 14px;
+position        : fixed;
+bottom          : 0.5%;
+left            : 0.5%;
+text-align      : center;
+line-height     : 16px;
+padding         : 2px 0px 1px;
+background-color: lightcyan;
+width           : 240px;
+max-width       : 86%;
+margin-top      : auto;
+font-size       : 11px;
 }
 
 
