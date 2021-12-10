@@ -1,33 +1,36 @@
+// www.serialupdates.me
+// www.allexamgurublog.com/
+
 const data = [
     {
         id: 1,
-        questions: "Which of the following corresponds to 'ek bataa do'?",
+        question: "Which of these diseases has no effective vaccine?",
         answers: [
             {
                 option: "A",
-                text: "Pura",
+                text: "Mumps",
                 correct: false,
             },
             {
                 option: "B",
-                text: "Sawa",
+                text: "Tetanus",
                 correct: false,
             },
             {
                 option: "C",
-                text: "Adha",
+                text: "Common Cold",
                 correct: true,
             },
             {
                 option: "D",
-                text: "Pauna",
+                text: "Smallpox",
                 correct: false,
             },
         ]
     },
     {
         id: 2,
-        questions: "In which of these two sports is the term 'free hit' used?",
+        question: "In which of these two sports is the term 'free hit' used?",
         answers: [
             {
                 option: "A",
@@ -53,158 +56,368 @@ const data = [
     },
     {
         id: 3,
-        questions: "In the game of ludo the discs or tokens are of how many colours?",
+        question: "Which of these teams has reached the finals of the men’s ICC Cricket World Cup but has never won it?",
         answers: [
             {
                 option: "A",
-                text: "One",
+                text: "England",
                 correct: false,
             },
             {
                 option: "B",
-                text: "Two",
+                text: "Pakistan",
                 correct: false,
             },
             {
                 option: "C",
-                text: "Three",
+                text: "West Indies",
                 correct: false,
             },
             {
                 option: "D",
-                text: "Four",
+                text: "New Zealand",
                 correct: true,
             },
         ]
     },
     {
         id: 4,
-        questions: "Which of these are names of national parks located in Madhya Pradesh?",
+        question: "Which of these is made of bone?",
         answers: [
             {
                 option: "A",
-                text: "Krishna and Kanhaiya",
+                text: "Walrus tusks",
                 correct: false,
             },
             {
                 option: "B",
-                text: "Kanha and Madhava",
-                correct: true,
-            },
-            {
-                option: "C",
-                text: "Ghanshyam and Murari",
+                text: "Rhino horns",
                 correct: false,
             },
             {
+                option: "C",
+                text: "Deer antlers",
+                correct: true,
+            },
+            {
                 option: "D",
-                text: "Girdhar and Gopal",
+                text: "Elephant tusks",
                 correct: false,
             },
         ]
     },
     {
         id: 5,
-        questions: "Where was the BRICS summit held in 2014?",
+        question: "Where in China was the coronavirus disease 2019, or COVID-19, first identified?",
         answers: [
             {
                 option: "A",
-                text: "Brizil",
+                text: "Shenzhou",
+                correct: false,
+            },
+            {
+                option: "B",
+                text: "Wuhan",
+                correct: true,
+            },
+            {
+                option: "C",
+                text: "Beijing",
+                correct: false,
+            },
+            {
+                option: "D",
+                text: "Shanghai",
+                correct: false,
+            },
+        ]
+    },
+    {
+        id: 6,
+        question: " According to a proverb, what is said to be ‘the mother of invention’ ?",
+        answers: [
+            {
+                option: "A",
+                text: "Society",
+                correct: false,
+            },
+            {
+                option: "B",
+                text: "Problem",
+                correct: false,
+            },
+            {
+                option: "C",
+                text: "Science",
+                correct: false,
+            },
+            {
+                option: "D",
+                text: "Necessity",
+                correct: true,
+            },
+        ]
+    },
+    {
+        id: 7,
+        question: "Floor exercise, vault, and uneven bars are events in which sport ?",
+        answers: [
+            {
+                option: "A",
+                text: "Synchronized Swimming",
+                correct: false,
+            },
+            {
+                option: "B",
+                text: "Gymnastics",
+                correct: true,
+            },
+            {
+                option: "C",
+                text: "Skating ",
+                correct: false,
+            },
+            {
+                option: "D",
+                text: "Wrestling",
+                correct: false,
+            },
+        ]
+    },
+    {
+        id: 8,
+        question: "Which among these is an Island country ?",
+        answers: [
+            {
+                option: "A",
+                text: "Yemen ",
+                correct: false,
+            },
+            {
+                option: "B",
+                text: "Maldives",
+                correct: true,
+            },
+            {
+                option: "C",
+                text: "Oman ",
+                correct: false,
+            },
+            {
+                option: "D",
+                text: "Peru",
+                correct: false,
+            },
+        ]
+    },
+    {
+        id: 9,
+        question: "what has been e currency of Greece sine 2002?",
+        answers: [
+            {
+                option: "A",
+                text: "Euro",
+                correct: true,
+            },
+            {
+                option: "B",
+                text: "peso",
+                correct: true,
+            },
+            {
+                option: "C",
+                text: "Drachma",
+                correct: true,
+            },
+            {
+                option: "D",
+                text: "Lira",
+                correct: false,
+            },
+        ]
+    },
+    {
+        id: 10,
+        question: "Whose death sparked World War I?",
+        answers: [
+            {
+                option: "A",
+                text: "Kaiser Wilhelm",
+                correct: false,
+            },
+            {
+                option: "B",
+                text: "Archbishop Ussher",
+                correct: false,
+            },
+            {
+                option: "C",
+                text: "Queen Victoria",
+                correct: false,
+            },
+            {
+                option: "D",
+                text: "Archduke Franz Ferdinand",
+                correct: true,
+            },
+        ]
+    },
+    {
+        id: 11,
+        question: "Which of these nations was neutral in World War I?",
+        answers: [
+            {
+                option: "A",
+                text: "Germany",
+                correct: false,
+            },
+            {
+                option: "B",
+                text: "Norway",
+                correct: true,
+            },
+            {
+                option: "C",
+                text: "Italy",
+                correct: false,
+            },
+            {
+                option: "D",
+                text: "England",
+                correct: false,
+            },
+        ]
+    },
+    {
+        id: 12,
+        question: "Which of these ships was sunk by a German submarine?",
+        answers: [
+            {
+                option: "A",
+                text: "Arizona",
+                correct: false,
+            },
+            {
+                option: "B",
+                text: "Lusitania",
+                correct: true,
+            },
+            {
+                option: "C",
+                text: "Titanic",
+                correct: false,
+            },
+            {
+                option: "D",
+                text: "Andrea Doria",
+                correct: false,
+            },
+        ]
+    },
+    {
+        id: 13,
+        question: "When was the first Nobel Prize in economics awarded?",
+        answers: [
+            {
+                option: "A",
+                text: "1969",
+                correct: true,
+            },
+            {
+                option: "B",
+                text: "1949",
+                correct: false,
+            },
+            {
+                option: "C",
+                text: "1909",
+                correct: false,
+            },
+            {
+                option: "D",
+                text: "1929",
+                correct: false,
+            },
+        ]
+    },
+    {
+        id: 14,
+        question: "Where were the Aegean Bronze Age civilizations located?",
+        answers: [
+            {
+                option: "A",
+                text: "Algeria",
                 correct: false,
             },
             {
                 option: "B",
                 text: "India",
-                correct: true,
+                correct: false,
             },
             {
                 option: "C",
-                text: "Russia",
+                text: "Greece",
                 correct: true,
             },
             {
                 option: "D",
-                text: "China",
+                text: "Spain",
                 correct: false,
             },
         ]
     },
     {
-        id: 6,
-        questions: "Who wrote the introduction to the English translation of Rabindranath Tagore's ",
+        id: 15,
+        question: "In what American state would you find Denali?",
         answers: [
             {
                 option: "A",
-                text: "PuMalariara",
+                text: "Alabama",
                 correct: false,
             },
             {
                 option: "B",
-                text: "Tetanus",
+                text: "Arkansas",
                 correct: false,
             },
             {
                 option: "C",
-                text: "Diarrhoea",
+                text: "Alaska",
                 correct: true,
             },
             {
                 option: "D",
-                text: "Beriberi",
+                text: "Arizona",
                 correct: false,
             },
         ]
     },
     {
-        id: 6,
-        questions: "During which of these legendary events did Lord Vishnu take the form of Kurma",
+        id: 16,
+        question: "What were the pyramids of Egypt?",
         answers: [
             {
                 option: "A",
-                text: "Kurukshetra Yudh",
+                text: "Administrative centers",
                 correct: false,
             },
             {
                 option: "B",
-                text: "Hiranyakashipu Sanhar",
-                correct: false,
-            },
-            {
-                option: "C",
-                text: "Adha",
+                text: "Tombs",
                 correct: true,
             },
             {
+                option: "C",
+                text: "Command posts",
+                correct: false,
+            },
+            {
                 option: "D",
-                text: "Pauna",
+                text: "Shrines",
                 correct: false,
             },
         ]
     },
-    {
-        id: 1,
-        questions: "Which of the following correesponds to 'ek bataa do'?",
-        answers: [
-            {
-                option: "A",
-                text: "Pura",
-                correct: false,
-            },
-            {
-                option: "B",
-                text: "Sawa",
-                correct: false,
-            },
-            {
-                option: "C",
-                text: "Adha",
-                correct: true,
-            },
-            {
-                option: "D",
-                text: "Pauna",
-                correct: false,
-            },
-        ]
-    },
-]
+];
+
+export default data;
