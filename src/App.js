@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
-import Timer from './components/Timer';
-import Quiz from './components/Quiz';
-import data from "./components/data"
 import './App.css';
+
+import React, { useEffect, useState } from 'react';
+
+import Play from './components/Play';
+import Quiz from './components/Quiz';
+import Timer from './components/Timer';
+import askExpert from '../src/assets/ask_the_expert.png'
 import audiencePoll from '../src/assets/audience_poll.png'
+import data from "./components/data"
 import fiftyFifty from '../src/assets/fifty_fifty.png'
 import flipQuestion from '../src/assets/flip_the_question.png'
-import askExpert from '../src/assets/ask_the_expert.png'
-import Play from './components/Play';
+
 const App = () => {
   const [username, setUsername] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -38,12 +41,12 @@ const App = () => {
       moneyList.find((money) => money.id === questionNumber - 1).amount);
   }, [moneyList, questionNumber]);
   return (
-    <>
+    <React.Fragment>
       <div className='app_container'>
         {
-          username 
-          ? (
-            <>
+          username
+            ? (
+              <React.Fragment>
                 <div className="main">
                   {
                     stop
@@ -64,7 +67,7 @@ const App = () => {
                           </div>
                         )
                       : (
-                        <>
+                        <React.Fragment>
                           <div className="top">
                             <Timer setStop={setStop} questionNumber={questionNumber} />
                           </div>
@@ -77,7 +80,7 @@ const App = () => {
                               setQuestionNumber={setQuestionNumber}
                             />
                           </div>
-                        </>
+                        </React.Fragment>
                       )
                   }
 
@@ -101,32 +104,32 @@ const App = () => {
                     {
                       moneyList.map(({ id, amount }) => {
                         return (
-                          <>
+                          <React.Fragment>
                             <li key={id} className={questionNumber === id
                               ? "moneyListItem active" : "moneyListItem"}>
                               <span className='moneyListItemNumber'>{id}</span>
                               <span className='moneyListItemAmount'>{amount}</span>
                             </li>
-                          </>
+                          </React.Fragment>
                         )
                       })
                     }
                   </ul>
                 </div>
-            </>
-          ) : (
-            <Play setUsername={setUsername} />
-          )
+              </React.Fragment>
+            ) : (
+              <Play setUsername={setUsername} />
+            )
         }
 
       </div>
 
       <footer>
-        Guided by:<span> Digital Solutions Master</span>
-        <br />
         Designed by <a target="_blank" rel="noreferrer" href='https://github.com/MohammadAmin-Mashayekhan'>Mohammad amin Mashayekhan</a>
+        <br />
+        Guided by:<span> Digital Solutions Master</span>
       </footer>
-    </>
+    </React.Fragment>
 
 
   );

@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
-import useSound from "use-sound";
-import wrong from '../assets/play.mp3';
+import React ,{ useEffect, useState } from 'react';
+
 import correct from '../assets/correct.mp3';
 import play from '../assets/wrong.mp3';
+import useSound from "use-sound";
+import wrong from '../assets/play.mp3';
 
 const Quiz = ({ data, setStop, questionNumber, setQuestionNumber }) => {
     const [question, setQuestion] = useState(null);
@@ -56,11 +57,13 @@ const Quiz = ({ data, setStop, questionNumber, setQuestionNumber }) => {
 
 
     return <div className="quiz">
-        <div className="question">{question?.question}</div>
+        <div className="question">{question && question.question}</div>
+        {/* <div className="question">{question?.question}</div> */}
         {/* // '?' means optional means question may be exist or not */}
         <div className="answers">
             {
-                question?.answers.map((answer, index) => {
+                question && question.answers.map((answer, index) => {
+                // question?.answers.map((answer, index) => {
                     return (
                         <div 
                             key={index} 
