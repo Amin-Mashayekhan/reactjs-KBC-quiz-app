@@ -1,4 +1,4 @@
-## Technologies used
+## Some technologies used
 - React Hooks
 - Redux Toolkit
 - use-sound
