@@ -125,7 +125,7 @@ const App = () => {
       </div>
 
       <footer>
-        Designed by <a target="_blank" rel="noreferrer" href='https://github.com/MohammadAmin-Mashayekhan'>Mohammad amin Mashayekhan</a>
+        Coded by <a target="_blank" rel="noreferrer" href='https://github.com/MohammadAmin-Mashayekhan'>Mohammad amin Mashayekhan</a>
         <br />
         Guided by:<span> Digital Solutions Master</span>
       </footer>
