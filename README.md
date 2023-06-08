@@ -1,4 +1,4 @@
-## ReactJS KBC Quiz App
+# ReactJS KBC Quiz App
 
 
 ## Some technologies used
