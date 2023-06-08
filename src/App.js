@@ -38,7 +38,6 @@ const App = () => {
 
 
   const resetHandler = () => {
-    setUsername(null);
     setStop(false);
     setQuestionNumber(1);
     setEarned("0");
