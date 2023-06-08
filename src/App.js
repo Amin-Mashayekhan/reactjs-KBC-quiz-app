@@ -36,6 +36,15 @@ const App = () => {
     { id: 16, amount: "70,000,000" },
   ].reverse();
 
+
+  const resetHandler = () => {
+    setUsername(null);
+    setStop(false);
+    setQuestionNumber(1);
+    setEarned("0");
+  }
+
+
   useEffect(() => {
     questionNumber > 1 && setEarned(
       moneyList.find((money) => money.id === questionNumber - 1).amount);
@@ -62,9 +71,14 @@ const App = () => {
                             </div>
                           </div>
                         ) : (
-                          <div className="earned">
-                            You earned: <span className="earned_money">${earned}</span>
-                          </div>
+                          <React.Fragment>
+                            <div className="earned">
+                              You earned: <span className="earned_money">${earned}</span>
+                              <div className='d-flex justify-content-center'>
+                                <button className="startButton" style={{ maxWidth: "230px", marginTop: "8px" }} onClick={resetHandler}>Try Again!</button>
+                              </div>
+                            </div>
+                          </React.Fragment>
                         )
                       : (
                         <React.Fragment>
