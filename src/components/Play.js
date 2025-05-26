@@ -7,7 +7,7 @@ const Play = ({setUsername}) => {
     }
     return (
         <div className="start">
-            <div className="kbc_game"><h1><span className="gold">🏆</span> KBC Quiz App</h1></div>
+            <div className="kbc_quiz"><h1><p className="gold">🏆</p> KBC Quiz</h1></div>
             <input type="text" placeholder="Enter you name" className="startInput" ref={inputRef} />
             <button className="startButton" onClick={handleClick}>Start</button>
         </div>
