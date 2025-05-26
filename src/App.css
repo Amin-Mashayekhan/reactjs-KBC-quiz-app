@@ -1,167 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Righteous&family=Roboto:wght@500;700;900&display=swap');
-;
-
 
 * {
-    margin    : 0;
-    padding   : 0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-
 body {
     font-family: "Roboto", sans-serif;
+    background-color: #061161;
+    color: white;
 }
-
 
 .app_container {
-    height          : 100vh;
-    display         : flex;
-    color           : white;
-    background-color: #061161;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
 }
-
 
 .main {
     width: 75%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230),
         url("../src/assets/image05.png") center;
-    display       : flex;
+    background-size: cover;
+    display: flex;
     flex-direction: column;
+    position: relative;
 }
-
 
 .price_list {
-    width           : 25%;
+    width: 25%;
     background-color: #020230;
-    display         : flex;
-    align-items     : center;
-    align-content: flex-start;
-    justify-content : center;
-    flex-wrap       : wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
 }
 
+.price_list_game_over {
+    justify-content: center;
+}
 
 .moneyList {
-    padding        : 20px;
+    padding: 0 15px;
     list-style-type: none;
-    width          : 100%;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
     margin-top: 15px;
 }
 
-
 .moneyListItem {
-    display      : flex;
-    align-items  : center;
-    padding      : 7px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
     border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 .moneyListItem.active {
     background-color: #ffa800;
-    color           : black;
+    color: black;
+    font-weight: bold;
 }
-
 
 .moneyListItemNumber {
-    width       : 30%;
-    font-size   : 25px;
-    font-weight : 300;
-    text-align  : right;
-    margin-right: 60px;
+    width: 30%;
+    font-size: 18px;
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-right: 15px;
 }
-
 
 .moneyListItemAmount {
-    font-size  : 25px;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
 }
-
 
 .top {
-    height  : 50%;
+    height: 50%;
     position: relative;
-    margin  : 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 30px;
 }
-
 
 .timer {
-    width          : 100px;
-    height         : 100px;
-    border-radius  : 50%;
-    border         : 2px solid #ffa800;
-    display        : flex;
-    align-items    : center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ffa800;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    position       : absolute;
-    bottom         : -65px;
-    left           : -56px;
-    font-size      : 35px;
-    font-weight    : 700;
-    padding        : 5px;
-    background     : linear-gradient(black, #100241);
+    font-size: 30px;
+    font-weight: 700;
+    background: linear-gradient(black, #100241);
+    box-shadow: 0 0 10px #ffa800;
 }
-
 
 .bottom {
-    height: 50%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .quiz {
-    height         : 100%;
-    display        : flex;
-    flex-direction : column;
-    align-items    : center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
+    width: 90%;
+    max-width: 800px;
+    padding: 10px 0;
 }
-
 
 .question {
-    width        : 80%;
-    background   : linear-gradient(#100241, black);
-    text-align   : center;
-    padding      : 20px;
-    border-radius: 35px;
-    border       : 2px solid #ffa800;
-    font-size    : 30px;
-    z-index      : 10;
+    width: 100%;
+    background: linear-gradient(#100241, black);
+    text-align: center;
+    padding: 15px;
+    border-radius: 25px;
+    border: 2px solid #ffa800;
+    font-size: 22px;
+    margin-bottom: 20px;
 }
-
 
 .answers {
-    width          : 100%;
-    display        : flex;
+    width: 100%;
+    display: flex;
     justify-content: center;
-    flex-wrap      : wrap;
+    flex-wrap: wrap;
+    gap: 14px;
 }
-
 
 .answer {
-    width        : 40%;
-    padding      : 10px;
-    margin       : 0 10px 20px 10px;
-    text-align   : center;
-    background   : linear-gradient(#0e0124, #061161);
-    border       : 1px solid #ffa800;
-    border-radius: 25px;
-    font-weight  : 300;
-    font-size    : 30px;
-    cursor       : pointer;
+    width: 45%;
+    min-width: 200px;
+    padding: 12px;
+    text-align: center;
+    background: linear-gradient(#0e0124, #061161);
+    border: 1px solid #ffa800;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
-
 
 .answer:hover,
 .answer.active {
     background: #2900e0;
 }
 
-
 .answer.correct {
     animation: correct 3s ease forwards;
 }
-
 
 @keyframes correct {
 
@@ -183,11 +184,9 @@ body {
     }
 }
 
-
 .answer.wrong {
     animation: wrong 3s ease forwards;
 }
-
 
 @keyframes wrong {
 
@@ -207,243 +206,377 @@ body {
     100% {
         background: #da2100;
     }
-
 }
 
-
-.earned {
-    position  : relative;
-    top       : 0;
-    bottom    : 0;
-    left      : 0;
-    right     : 0;
-    margin    : auto;
-    width     : 80%;
+.earned,
+.winner {
+    display: flex;
+    flex-direction: column;
+    cipher-text: center;
     text-align: center;
-    font-size : 35px;
-    background: linear-gradient(90deg,
-            #061161 0%,
-            #000000 50%,
-            #061161 100%);
-    padding      : 20px 0px;
-    border       : 2px solid #ffa800;
+    padding: 20px;
     border-radius: 10px;
-    font-weight  : bold;
+    border: 2px solid #ffa800;
+    background: linear-gradient(90deg, #061161 0%, #000000 50%, #061161 100%);
+    margin: auto;
+    width: 80%;
+    max-width: 500px;
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: bold;
 }
-
 
 .winner {
+    border-radius: 50%;
+    height: auto;
+    padding: 30px 20px;
+}
+
+.gold {
+    color: gold;
+    font-size: clamp(1.2em, 4vw, 1.5em);
+    margin-bottom: 10px;
+}
+
+.earned_money {
+    color: #ffa800;
+    vertical-align: middle;
+}
+
+.start {
+    width: 90%;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position  : relative;
-    top       : 0;
-    bottom    : 0;
-    left      : 0;
-    right     : 0;
-    margin    : auto;
-    width     : 65%;
-    height    : 29%;
-    text-align: center;
-    font-size : 50px;
-    background: linear-gradient(90deg,
-            #061161 0%,
-            #000000 50%,
-            #061161 100%);
-    padding      : 20px 10px;
-    border-radius: 50%;
-    border       : 5px solid #ffa800;
-    font-weight  : bold;
+    margin: auto;
+    height: 100vh;
+    padding: 20px;
 }
-
-
-.gold{
-    color:gold;
-}
-
-
-.earned-title {
-    font-size: 50px;
-    margin   : 25px 0 20px 0;
-}
-
-
-.earned_money {
-    color         : #ffa800;
-    font-size     : 50px;
-    vertical-align: middle;
-}
-
-
-.start {
-    width          : 250px;
-    display        : flex;
-    flex-direction : column;
-    justify-content: space-between;
-    align-items    : center;
-    position       : relative;
-    top            : 0;
-    bottom         : 0;
-    left           : 0;
-    right          : 0;
-    margin         : auto;
-}
-
 
 .startInput {
-    width         : 100%;
-    border        : none;
-    border-radius : 5px;
-    text-align    : center;
-    font-size     : 22px;
-    padding       : 10px 0;
-    margin-bottom : 40px;
+    width: 100%;
+    border: 1px solid #ffa800;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    padding: 12px 10px;
+    margin-bottom: 25px;
     text-transform: capitalize;
+    background-color: #020230;
+    color: white;
 }
-
 
 .startInput:focus {
     outline: none;
+    border-color: #fff;
 }
 
-
 .startButton {
-    width         : 100%;
-    height        : 60px;
-    border        : none;
-    border-radius : 5px;
-    cursor        : pointer;
-    font-size     : 30px;
-    font-weight   : 700;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background    : linear-gradient(black, #100241);
-    border        : 1px solid #ffa800;
-    box-shadow    : 5px 5px 5px black;
-    color         : white;
+    background: linear-gradient(black, #100241);
+    border: 1px solid #ffa800;
+    box-shadow: 3px 3px 5px black;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.startButton:hover {
+    background: linear-gradient(#100241, black);
+    transform: translateY(-2px);
+}
+
+.startButton:active {
+    transform: translateY(0);
+}
+
+.lifelines_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    gap: 10px;
+    background-color: #020230;
+    order: 1;
+    width: 100%;
 }
 
 .lifelines {
-    padding        : 10px 0px 0px 0px;
-    margin-bottom  : 0px;
-    width          : 100%;
-    display        : flex;
-    align-items    : center;
+    padding: 14px 0px 0px 0px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
     justify-content: space-evenly;
+    width: 100%;
 }
-
 
 .lifeline {
-    position        : relative;
-    width           : 15%;
-    border          : 2px solid #ffa800;
-    border-radius   : 50%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffa800;
+    border-radius: 50%;
     background-color: transparent;
-    cursor          : pointer;
-    outline         : none;
-    padding         : 10px;
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
+    cursor: not-allowed;
+    outline: none;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.lifeline:hover {
+    background-color: rgba(255, 168, 0, 0.2);
+    transform: scale(1.1);
+}
 
 .lifeline img {
-    width: 90%;
+    width: 100%;
+    height: auto;
 }
-
-
-span.option {
-    color: #ffa800;
-}
-
 
 .kbc_game {
-    margin        : 25px 0;
-    text-align    : center;
-    font-size     : 50px;
-    font-family   : 'Righteous', cursive;
-    letter-spacing: 5px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: clamp(28px, 6vw, 40px);
+    font-family: 'Righteous', cursive;
+    letter-spacing: 3px;
 }
-
-
-@media only screen and (max-width: 1920px) {
-    .moneyListItemNumber {
-        font-size: 19px;
-    }
-
-
-    .moneyListItemAmount {
-        font-size  : 19px;
-        font-weight: 300;
-    }
-
-
-    .earned-title {
-        font-size: 35px;
-        margin   : 8px 0 15px 0;
-    }
-
-
-    .earned_money {
-        font-size: 35px;
-    }
-
-
-    .kbc_game {
-        font-size: 35px;
-    }
-
-
-    .timer {
-        bottom: -42px;
-    }
-
-
-    .question {
-        font-size: 25px;
-    }
-
-
-    .answer {
-        font-size: 25px;
-    }
-
-
-    .lifeline {
-        padding: 4px;
-    }
-
-
-    .moneyListItem {
-        padding: 10px 5px;
-    }
-
-
-    .winner {
-        padding: 30px 10px;
-    }
-}
-
-
 
 footer {
-position        : fixed;
-bottom          : 0.5%;
-left            : 0.5%;
-text-align      : center;
-line-height     : 16px;
-padding         : 2px 0px 1px;
-background-color: lightcyan;
-width           : 240px;
-max-width       : 86%;
-margin-top      : auto;
-font-size       : 11px;
+    position: static;
+    text-align: center;
+    line-height: 1.5;
+    padding: 15px;
+    background-color: #020230;
+    width: 100%;
+    font-size: 12px;
+    color: #aaa;
+    border-top: 1px solid #ffa800;
+    order: 3;
 }
 
-
 footer a {
-    color          : #000;
+    color: #ffa800;
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.sidebar_toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    .main {
+        width: 100%;
+    }
+
+    .top {
+        height: 32%;
+    }
+
+    .sidebar_toggle {
+        display: inline-block;
+        position: absolute;
+        top: 4px;
+        right: 8px;
+        cursor: pointer;
+    }
+    .sidebar_toggle .x {
+        font-size: 22px;
+        margin-top: 1px;
+        display: block;
+    }
+
+    .sidebar_toggle .dots {
+        margin-top: -14px;
+        font-size: 35px;
+        display: block;
+    }
+
+    .price_list {
+        width: 270px;
+        background-color: #010a4e;
+        position: absolute;
+        right: 0;
+        height: 160px;
+    }
+
+    
+    .price_list.open {
+        height: 100%;
+
+    }
+
+    .price_list_game_over {
+        justify-content: center;
+    }
+
+    .moneyList {
+        padding: 0 10px;
+        max-height: none;
+    }
+
+    .moneyListItem {
+        padding: 8px 12px;
+        margin-right: 8px;
+        min-width: 100px;
+        border: 1px solid transparent;
+    }
+
+    .moneyListItem.active {
+        border-color: #ffa800;
+        background-color: #061161;
+        color: #ffa800;
+    }
+
+    .moneyListItem.active .moneyListItemAmount,
+    .moneyListItem.active .moneyListItemNumber {
+        color: #ffa800;
+    }
+
+    .moneyListItemNumber {
+        font-size: 14px;
+        margin-right: 0;
+        margin-bottom: 4px;
+    }
+
+    .moneyListItemAmount {
+        font-size: 14px;
+    }
+
+    .timer {
+        width: 70px;
+        height: 70px;
+        font-size: 26px;
+    }
+
+    .top {
+        padding-bottom: 25px;
+        min-height: 180px;
+    }
+
+    .question {
+        font-size: 20px;
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+    .answer {
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 15px;
+        width: calc(50% - 10px);
+        min-width: unset;
+    }
+
+    .lifelines_container {
+        order: 0;
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    .lifelines {
+        padding-top: 32px;
+    }
+
+    .lifeline {
+        width: 45px;
+        height: 45px;
+        padding: 6px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .quiz {
+        width: 95%;
+    }
+
+    .question {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .answers {
+        gap: 10px;
+    }
+
+    .answer {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .earned-title,
+    .winner .gold {
+        font-size: 18px;
+    }
+
+    .winner {
+        padding: 20px 15px;
+    }
+
+    .startInput {
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .startButton {
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .timer {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+    }
+
+    .top {
+        min-height: 150px;
+    }
+
+    .lifelines_container {
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    .lifeline {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+    }
+
+    .moneyListItem {
+        padding: 6px 10px;
+        min-width: 90px;
+    }
+
+    .moneyListItemNumber,
+    .moneyListItemAmount {
+        font-size: 13px;
+    }
+
+    .price_list {
+        padding: 8px 0;
+        height: 145px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .price_list_game_over .moneyList {
+        justify-content: center;
+    }
 }

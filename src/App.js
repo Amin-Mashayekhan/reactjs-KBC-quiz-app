@@ -16,6 +16,7 @@ const App = () => {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState("0");
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const moneyList = [
     { id: 1, amount: "1,000" },
@@ -98,33 +99,45 @@ const App = () => {
                   }
 
                 </div>
-                <div className="price_list">
+                <div className={`price_list ${sidebarOpen && 'open'}`}>
+                  <span className="sidebar_toggle" onClick={() => setSidebarOpen((prev) => !prev)}>{sidebarOpen ? <span className='x'>✖️</span> : <span className='dots'>...</span>}</span>
                   <div className="lifelines">
-                    <div className="lifeline">
+                    <div className="lifeline" title='Developing...'>
                       <img src={audiencePoll} alt="Audience Poll" />
                     </div>
-                    <div className="lifeline">
+                    <div className="lifeline" title='Developing...'>
                       <img src={fiftyFifty} alt="Fifty Fifty" />
                     </div>
-                    <div className="lifeline">
+                    <div className="lifeline" title='Developing...'>
                       <img src={flipQuestion} alt="Flip Question" />
                     </div>
-                    <div className="lifeline">
+                    <div className="lifeline" title='Developing...'>
                       <img src={askExpert} alt="Ask the Expert" />
                     </div>
                   </div>
                   <ul className='moneyList'>
                     {
                       moneyList.map(({ id, amount }) => {
+                        if (sidebarOpen) {
+                          return (
+                            <React.Fragment>
+                              <li key={id} className={questionNumber === id
+                                ? "moneyListItem active" : "moneyListItem"}>
+                                <span className='moneyListItemNumber'>{id}</span>
+                                <span className='moneyListItemAmount'>{amount}</span>
+                              </li>
+                            </React.Fragment>
+                          )
+                        } else if (questionNumber === id) {
                         return (
                           <React.Fragment>
-                            <li key={id} className={questionNumber === id
-                              ? "moneyListItem active" : "moneyListItem"}>
+                            <li key={id} className="moneyListItem active">
                               <span className='moneyListItemNumber'>{id}</span>
                               <span className='moneyListItemAmount'>{amount}</span>
                             </li>
                           </React.Fragment>
                         )
+                        }
                       })
                     }
                   </ul>
