@@ -83,3 +83,6 @@ Questions are adapted and curated from the following publicly available resource
 ---
 
 Feel free to fork, contribute, or report issues via the GitHub repository.
+
+---
+Guided by Digital Solutions Master
