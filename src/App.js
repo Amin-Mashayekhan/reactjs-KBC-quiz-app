@@ -138,6 +138,7 @@ const App = () => {
                           </React.Fragment>
                         )
                         }
+                        return null
                       })
                     }
                   </ul>
