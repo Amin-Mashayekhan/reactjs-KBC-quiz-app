@@ -385,7 +385,7 @@ footer a:hover {
     }
 
     .top {
-        height: 32%;
+        height: 34%;
     }
 
     .sidebar_toggle {
@@ -398,7 +398,7 @@ footer a:hover {
 
     .sidebar_toggle .x {
         font-size: 22px;
-        margin-top: 1px;
+        margin-top: 0px;
         display: block;
     }
 
@@ -491,7 +491,7 @@ footer a:hover {
     }
 
     .lifelines {
-        padding-top: 32px;
+        padding-top: 28px;
     }
 
     .lifeline {
